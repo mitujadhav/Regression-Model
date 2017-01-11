@@ -1,0 +1,30 @@
+library("MASS")
+data(menarche)
+ str(menarche)
+ plot(Menarche/Total ~ Age, data=menarche)
+ glm.out<-glm(cbind(Menarche, Total-Menarche) ~ Age, family=binomial(logit), data=menarche)
+ 
+ 
+ fit<-lm(am~hp+wt,data=mtcars)
+ coef(fit)
+ predict(fit, newdata, type="response") 
+ 
+  y<-mtcars$am
+  x<-mtcars$hp
+  z<-mtcars$wt
+ 
+  
+ 
+ 
+ am.glm = glm(formula=am ~ hp + wt,data=mtcars,family=binomial)
+ coef(am.glm)
+ newdata = data.frame(hp=120, wt=2.8)
+ predict(am.glm, newdata, type="response") 
+ 
+ lm(am~hp,data = mtcars)
+ beta1 <- cor(mtcars$am, mtcars$hp) * sd(mtcars$am) / sd( mtcars$hp)
+ cor(mtcars$am, mtcars$wt) * sd(mtcars$am) / sd( mtcars$wt)
+ 
+ beta1 <- cor(mtcars$am, mtcars$wt+mtcars$hp) * sd(mtcars$am) / sd( mtcars$hp+mtcars$wt)
+ # intercept
+ beta0 <- mean(y) - beta1 * mean(x)
